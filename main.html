@@ -1,22 +1,67 @@
 <!DOCTYPE html>
 <html>
-<title>Celsius to Fahrenheit Temperature Converter</title>
+<head>
+  <title>Celsius to Fahrenheit Temperature Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .converter {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    #outputFahrenheit {
+      font-weight: bold;
+    }
+  </style>
+</head>
 <body>
 
-<h2>Temperature Converter</h2>
-<p>Type a value in the Celsius field to convert the value to Fahrenheit:</p>
+<div class="converter">
+  <h2>Temperature Converter</h2>
+  <p>Type a value in the Celsius field to convert the value to Fahrenheit:</p>
 
-<p>
-  <label>Celsius</label>
-  <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
-</p>
-<p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+  <p>
+    <label for="inputCelsius">Celsius</label>
+    <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+  </p>
+
+  <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+</div>
 
 <script>
-function temperatureConverter(valNum) {
-  valNum = parseFloat(valNum);
-  document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
-}
+  function temperatureConverter(valNum) {
+    valNum = parseFloat(valNum);
+    document.getElementById("outputFahrenheit").innerHTML = (valNum * 1.8) + 32;
+  }
 </script>
 
 </body>
